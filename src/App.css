@@ -1,0 +1,53 @@
+.App-header {
+  text-align: center;
+}
+.App-header-item {
+  margin: 0 10px 0 10px;
+}
+
+.thread {
+  /* border: 2px solid #1abc9c;
+  border-radius: 8px; */
+  padding: 5px;
+}
+
+.thread-author {
+  font-weight: bolder;
+  margin-right: 12px;
+}
+
+.individual-thread {
+  border: 3px solid #16a085;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  border-radius: 3px;
+  display: table;
+}
+.individual-thread-author {
+  margin-right: 12px;
+}
+
+.post {
+  background: #16a085;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  display: table;
+}
+.post-author {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+
+button.likeLink {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
