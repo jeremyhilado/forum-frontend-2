@@ -52,6 +52,13 @@ export function cancelLike(postId){
   )
 }
 
+export function dislike(postId){
+  return axios.post(`${uri}/dislike`, {postId, username: currentUsername()}).then(
+    result => result.data,
+    error => console.log(error)
+  )
+}
+
 export const useGlobalLoginState = globalHook(
   React,
   {

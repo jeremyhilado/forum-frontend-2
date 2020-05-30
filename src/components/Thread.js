@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Post } from "./Post";
-import { useGlobalLoginState, newPost } from "../api";
+import { useGlobalLoginState, newPost, getThreadInfo } from "../api";
 
 export function Thread(props) {
   const [{ username, loggedIn }] = useGlobalLoginState();
   const [newPostContent, setNewPostContent] = React.useState("");
+  const [threadInfo, setThreadInfo] = React.useState([])
+
+  console.log('Thread - props', props)
+
+  useEffect(() => {
+    const makeApiCall = async () => {
+      const res = await getThreadInfo(props.id)
+      setThreadInfo(res)
+    }
+    makeApiCall()
+  }, [])
+
+  console.log('Thread - threadInfo', threadInfo)
 
   return (
     <div className="thread">
@@ -14,10 +27,16 @@ export function Thread(props) {
         <span className="thread-topic">{props.topic}</span>
       </div>
       <div className="thread-posts">
-        {props.posts.map(post => (
+        {props.posts.map((post, i) => (
           <Post
+            key={i}
             content={post.content}
             author={post.author}
+            id={post.id}
+            myVote={post.myVote}
+            likeCount={post.likeCount}
+            refreshThread={props.refreshThread}
+            dislikeCount={post.dislikeCount}
           />
         ))}
       </div>
