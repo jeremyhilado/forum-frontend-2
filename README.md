@@ -7,10 +7,10 @@ For a given post, users should be able to "like" the post. This will increase a 
 The button for liking and unliking should be one and the same with a conditional render determining whether the unlike or like icon shows, meaning the icon changes visually in some way to show that it is “clicked”
 
 # Requirements:
-The user should be able like a post (maximum of 1 time)
-The user should be able to unlike a post
-The post should display the total like score across all users.
-The like and unlike button should be the same button but conditionally render the correct action.
+- The user should be able like a post (maximum of 1 time)
+- The user should be able to unlike a post
+- The post should display the total like score across all users.
+- The like and unlike button should be the same button but conditionally render the correct action.
 
 # Instructions for Submission:
 Fork and Clone this repo onto YOUR github account of choice.
